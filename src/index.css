@@ -6,13 +6,22 @@
 
 html, body {
     height: 100%;
+    background: #201F2E;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
 }
 
-#root{
+#root {
+    max-width: 384px;
     height: 100%;
-    background: #201F2E;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    font-family: 'Roboto', sans-serif;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    #root {
+        max-width: 768px;
+    }
 }
