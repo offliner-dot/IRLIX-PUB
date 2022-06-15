@@ -1,14 +1,16 @@
 {
   "files": {
-    "main.css": "/IRLIX-PUB/static/css/main.7b837b0a.css",
-    "main.js": "/IRLIX-PUB/static/js/main.8ac2d323.js",
+    "main.css": "/IRLIX-PUB/static/css/main.2117af18.css",
+    "main.js": "/IRLIX-PUB/static/js/main.53c2659e.js",
+    "static/media/Rectangle 7.jpg": "/IRLIX-PUB/static/media/Rectangle 7.56b1d01ee95158a7b432.jpg",
     "static/media/header_logo.svg": "/IRLIX-PUB/static/media/header_logo.03643369b1723eae6e36c7d24784487d.svg",
+    "static/media/search.svg": "/IRLIX-PUB/static/media/search.9113df689bb90a71c9fbc7175b0430ab.svg",
     "index.html": "/IRLIX-PUB/index.html",
-    "main.7b837b0a.css.map": "/IRLIX-PUB/static/css/main.7b837b0a.css.map",
-    "main.8ac2d323.js.map": "/IRLIX-PUB/static/js/main.8ac2d323.js.map"
+    "main.2117af18.css.map": "/IRLIX-PUB/static/css/main.2117af18.css.map",
+    "main.53c2659e.js.map": "/IRLIX-PUB/static/js/main.53c2659e.js.map"
   },
   "entrypoints": [
-    "static/css/main.7b837b0a.css",
-    "static/js/main.8ac2d323.js"
+    "static/css/main.2117af18.css",
+    "static/js/main.53c2659e.js"
   ]
 }
