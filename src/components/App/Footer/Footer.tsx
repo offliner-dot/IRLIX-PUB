@@ -4,7 +4,6 @@ import search from "../../../assets/img/logo/search.svg";
 
 const Footer = () => {
     const [width, setWidth] = useState(window.innerWidth);
-    console.log(width);
     const handleResize = () => {
         setWidth(window.innerWidth);
     }

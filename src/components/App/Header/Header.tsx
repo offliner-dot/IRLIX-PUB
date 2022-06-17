@@ -9,9 +9,9 @@ const Header = () => {
     }
     return (
         <header className={style.header}>
-            <div className={style.header__info}>
-                <h1 className={style.header__title}>Главная</h1>
-                <h2 className={style.header__subTitle}>{getDate()}</h2>
+            <div className={style.info}>
+                <h1 className={style.title}>Главная</h1>
+                <h2 className={style.subTitle}>{getDate()}</h2>
             </div>
             <Logo/>
         </header>

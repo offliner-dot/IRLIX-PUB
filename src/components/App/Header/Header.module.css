@@ -1,20 +1,21 @@
 .header {
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
-.header__info{
-    padding-left: 32px;
+.header .info {
+  padding-left: 32px;
 }
-.header__title {
-    font-size: 24px;
-    font-weight: 700;
+.header .title {
+  font-size: 24px;
+  font-weight: 700;
+}
+.header .subTitle {
+  font-size: 18px;
+  font-weight: 300;
+  color: #C4C1CF;
 }
 
-.header__subTitle {
-    font-size: 18px;
-    font-weight: 300;
-    color: #C4C1CF;
-}
+/*# sourceMappingURL=Header.module.css.map */

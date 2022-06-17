@@ -5,7 +5,7 @@ import Card from "../../generic/Card/Card";
 const Main = () => {
     return (
         <main className={style.main}>
-            <div className={style.main__container}>
+            <div className={style.container}>
                 <Card/>
                 <Card/>
                 <Card/>
