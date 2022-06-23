@@ -1,27 +1,29 @@
+@import url("color.css");
+
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
 }
 
 html, body {
-  height: 100%;
-  background: #201F2E;
-  font-family: "Roboto", sans-serif;
-  color: #FFFFFF;
-}
-html #root, body #root {
-  max-width: 384px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-}
-@media (min-width: 768px) {
-  html #root, body #root {
-    max-width: 768px;
-  }
+    height: 100%;
 }
 
-/*# sourceMappingURL=index.css.map */
+body {
+    background: var(--bg-main);
+    font-family: "Roboto", sans-serif;
+    color: var(--c-main);
+}
+
+#root {
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    root {
+        max-width: 768px;
+    }
+}
+

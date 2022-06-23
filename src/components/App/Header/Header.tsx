@@ -1,19 +1,28 @@
-import React from 'react';
-import style from "./Header.module.css"
+import React, {FC} from 'react';
+import "./Header.css"
 import Logo from "../../generic/Logo/Logo";
+import {cn} from "../../../utils/bem-config";
+import NavBar from "../../generic/NavBar/NavBar";
 
-const Header = () => {
+type PropsType = {
+    navBarData: string[]
+};
+const Header: FC<PropsType> = ({navBarData}) => {
+    const header = cn("header");
     const getDate = () => {
         const month = new Date().toLocaleString("ru-RU", {day: 'numeric', month: 'long', year: 'numeric'});
         return month.split(" ").slice(0, 3).join(" ");
     }
     return (
-        <header className={style.header}>
-            <div className={style.info}>
-                <h1 className={style.title}>Главная</h1>
-                <h2 className={style.subTitle}>{getDate()}</h2>
+        <header className={header()}>
+            <div className={header("container")}>
+                <div className={header("info")}>
+                    <h1 className={header("title")}>Главная</h1>
+                    <h2 className={header("subTitle")}>{getDate()}</h2>
+                </div>
+                <Logo/>
             </div>
-            <Logo/>
+            <NavBar navBarData={navBarData}/>
         </header>
     );
 };
