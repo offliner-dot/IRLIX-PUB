@@ -1,0 +1,31 @@
+$baseColor: #FFFFFF;
+$backgroundColor: #201F2E;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background: $backgroundColor;
+  font-family: 'Roboto', sans-serif;
+  color: $baseColor;
+
+  #root {
+    max-width: 384px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    #root {
+      max-width: 768px;
+    }
+  }
+}
+
+

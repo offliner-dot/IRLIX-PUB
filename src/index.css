@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background: #201F2E;
+  font-family: "Roboto", sans-serif;
+  color: #FFFFFF;
+}
+html #root, body #root {
+  max-width: 384px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  html #root, body #root {
+    max-width: 768px;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
