@@ -1,0 +1,25 @@
+.navBar {
+    display: flex;
+    padding-left: 32px;
+    overflow: auto;
+}
+
+.navBar::-webkit-scrollbar {
+    display: none;
+}
+
+.navBar__item {
+    padding: 10px 20px;
+    font-weight: 300;
+    color: var(--c-footer)
+}
+
+.navBar__item:hover {
+    cursor: pointer;
+}
+
+.navBar__item--active {
+    border-radius: 32px;
+    border: 1px solid #FFFFFF;
+    color: var(--c-main);
+}

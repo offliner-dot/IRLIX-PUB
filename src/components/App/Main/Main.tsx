@@ -1,17 +1,27 @@
-import React from 'react';
-import style from "./Main.module.css";
+import React, {FC} from 'react';
+import "./Main.css";
 import Card from "../../generic/Card/Card";
+import {cn} from "../../../utils/bem-config";
+import {CardData} from "../../../types/cardData";
 
-const Main = () => {
+type PropsType = {
+    cardData: CardData[]
+};
+const Main: FC<PropsType> = ({cardData}) => {
+    const main = cn("main");
     return (
-        <main className={style.main}>
-            <div className={style.container}>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
+        <main className={main()}>
+            <div className={main("cardList")}>
+                {cardData.map(item => (
+                    <Card cardDataItem={item}
+                    />
+                ))}
+                {/*<Card/>*/}
+                {/*<Card/>*/}
+                {/*<Card/>*/}
+                {/*<Card/>*/}
+                {/*<Card/>*/}
+                {/*<Card/>*/}
             </div>
         </main>
     );
