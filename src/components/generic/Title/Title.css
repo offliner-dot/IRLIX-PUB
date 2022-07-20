@@ -1,0 +1,10 @@
+.info__title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.info__subTitle {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--c-gray-200);
+}

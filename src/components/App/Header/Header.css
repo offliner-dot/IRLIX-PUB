@@ -1,24 +1,15 @@
 .header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  width: 100%;
-  background: var(--bg-header);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    background: var(--bg-blue-gray-800);
 }
-.header__container{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+
+.header__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-.header__info {
-  padding-left: 32px;
-}
-.header__title {
-  font-size: 24px;
-  font-weight: 700;
-}
-.header__subTitle {
-  font-size: 18px;
-  font-weight: 300;
-  color: var(--c-headerSubTitle);
-}
+
+

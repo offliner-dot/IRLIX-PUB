@@ -1,9 +1,8 @@
 :root {
-    --c-footer: #C4C1CF;
-    --bg-footer: #0E0D13;
-    --c-main: #FFFFFF;
-    --bg-main: #201F2E;
-    --c-headerSubTitle: #C4C1CF;
-    --bg-header: linear-gradient(180deg, #201F2E 86%, rgba(32, 31, 46, 0) 100%);
-    --bg-footerInput : #44414E;
+    --c-gray-200: #C4C1CF;
+    --bg-black: #0E0D13;
+    --c-white: #FFFFFF;
+    --bg-blue-800: #201f2e;
+    --bg-blue-gray-800: linear-gradient(180deg, #201F2E 86%, rgba(32, 31, 46, 0) 100%);
+    --bg-gray-600: #44414E;
 }

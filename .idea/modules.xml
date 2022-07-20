@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/irlix_pub.iml" filepath="$PROJECT_DIR$/.idea/irlix_pub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/IRLIX-PUB.iml" filepath="$PROJECT_DIR$/.idea/IRLIX-PUB.iml" />
     </modules>
   </component>
 </project>
