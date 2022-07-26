@@ -12,9 +12,9 @@ html, body {
 }
 
 body {
-    background: var(--bg-main);
+    background: var(--bg-blue-800);
     font-family: "Roboto", sans-serif;
-    color: var(--c-main);
+    color: var(--c-white);
 }
 
 #root {

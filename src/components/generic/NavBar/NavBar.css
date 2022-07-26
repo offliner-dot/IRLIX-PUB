@@ -1,6 +1,5 @@
 .navBar {
     display: flex;
-    padding-left: 32px;
     overflow: auto;
 }
 
@@ -11,7 +10,7 @@
 .navBar__item {
     padding: 10px 20px;
     font-weight: 300;
-    color: var(--c-footer)
+    color: var(--c-gray-200)
 }
 
 .navBar__item:hover {
@@ -21,5 +20,5 @@
 .navBar__item--active {
     border-radius: 32px;
     border: 1px solid #FFFFFF;
-    color: var(--c-main);
+    color: var(--c-white);
 }

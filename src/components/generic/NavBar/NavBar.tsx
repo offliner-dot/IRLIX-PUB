@@ -1,5 +1,5 @@
 import React, {FC, useState} from 'react';
-import {cn} from "../../../utils/bem-config";
+import {cn} from "utils/bem-config";
 import "./NavBar.css";
 
 type PropsType = {
