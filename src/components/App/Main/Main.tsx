@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import "./Main.css";
 import Card from "components/generic/Card/Card";
 import {cn} from "utils/bem-config";
-import {CardData} from "types/cardData";
+import {CardData} from "types/models";
 
 type PropsType = {
     cardData: CardData[]

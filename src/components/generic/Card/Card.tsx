@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import "./Card.css";
 import {cn} from "utils/bem-config";
-import {CardData} from "types/cardData";
+import {CardData} from "types/models";
 
 type PropsType = {
     cardDataItem: CardData
