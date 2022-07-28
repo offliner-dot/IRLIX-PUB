@@ -12,7 +12,7 @@ const Card: FC<PropsType> = (cardDataItem) => {
     const {title, alcohol, image, description, info, id, recipe, ingredients} = cardDataItem.cardDataItem;
     return (
         <div className={card()}>
-            <img className={card("background")} src={image} alt="фон карточки"/>
+            <img className={card("background")} src={image} alt="коктейль"/>
             <div className={card("info")}>
                 <h2 className={card("title")}>{title}</h2>
                 <p className={card("description")}>{description.slice(1).map(item => (

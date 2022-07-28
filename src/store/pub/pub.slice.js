@@ -23,9 +23,6 @@ export const pubSlice = createSlice({
             state.sortedCategory = state.cocktails.filter(item => item.description.includes(state.selectedCategory));
         },
         sortCocktails(state, action) {
-            // if (action.payload) {
-            //     state.sortCocktails = state.sortedCategory.filter(item => item.title.toLowerCase().includes(action.payload.toLowerCase()))
-            // }
             state.sortCocktails = action.payload.toLowerCase();
         }
     },
