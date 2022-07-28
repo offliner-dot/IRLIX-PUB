@@ -9,16 +9,13 @@ type PropsType = {
 };
 const Card: FC<PropsType> = (cardDataItem) => {
     const card = cn("card");
-    const {title, alcohol, image, description, info, id, recipe, ingredients} = cardDataItem.cardDataItem;
+    const {title, alcohol, image, description} = cardDataItem.cardDataItem;
     return (
         <div className={card()}>
             <img className={card("background")} src={image} alt="коктейль"/>
             <div className={card("info")}>
                 <h2 className={card("title")}>{title}</h2>
-                <p className={card("description")}>{description.slice(1).map(item => (
-                    <Link to={item}> {item}</Link>
-                    // переделать на li
-                ))}</p>
+                <p className={card("description")}>{description.slice(1).map(item => `${item} ` )}</p>
             </div>
             <p className={card("alcohol")}>{alcohol}%<span className={card("size")}>Алкоголь</span></p>
         </div>
