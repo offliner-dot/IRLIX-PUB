@@ -22,3 +22,9 @@ export type Ingredient = {
     amount: number;
     unit: string;
 }
+
+export type Response = {
+    count: number
+    categories: []
+    cocktails: Cocktal[]
+}

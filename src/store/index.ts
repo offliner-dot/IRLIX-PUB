@@ -1,13 +1,11 @@
-import {configureStore} from "@reduxjs/toolkit";
-import {pubSlice} from "./pub/pub.slice";
-import {setupListeners} from "@reduxjs/toolkit/query";
+import {combineReducers, configureStore} from "@reduxjs/toolkit";
+import {pubReducer} from "./pub/pub.slice";
 
+const rootReducer = combineReducers({
+    pub: pubReducer
+})
 export const store = configureStore({
-    reducer: {
-        [pubSlice.reducerPath]: pubSlice.reducer,
-    },
-    middleware: getDefaultMiddleware => getDefaultMiddleware().concat(pubSlice.middleware)
+    reducer: rootReducer
 });
 
-setupListeners(store.dispatch);
 export type RootState = ReturnType<typeof store.getState>;

@@ -1,20 +1,24 @@
-import React, {FC, useState} from 'react';
+import React, {useState} from 'react';
 import {cn} from "utils/bem-config";
 import "./NavBar.css";
+import {useDispatch} from "react-redux";
+import {selectCategory} from "store/pub/pub.slice";
+import {useTypedSelector} from "hooks/redux";
 
-type PropsType = {
-    navBarData: string[]
-};
-const NavBar: FC<PropsType> = ({navBarData}) => {
-    const [active, setActive] = useState("Новинки")
+
+const NavBar = () => {
+    const navBarData: string[] = useTypedSelector(state => state.pub.categories)
+    const dispatch = useDispatch();
+    const [active, setActive] = useState(navBarData[0]);
     const navBar = cn("navBar");
     const handleClick = (e: React.MouseEvent<HTMLLIElement>) => {
         setActive(e.currentTarget.outerText)
-    }
+        dispatch(selectCategory(e.currentTarget.outerText))
+    };
     return (
         <ul className={navBar()}>
-            {navBarData.map(name => (
-                <li className={navBar("item", {active: name === active})}
+            {navBarData.map((name, index) => (
+                <li key={index} className={navBar("item", {active: name === active})}
                     onClick={(e) => handleClick(e)}
                 >{name}
                 </li>
