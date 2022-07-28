@@ -6,13 +6,13 @@ import {useTypedSelector} from "hooks/redux";
 
 
 const Main = () => {
-    const {sortedCocktails} = useTypedSelector(state => state.pub)
+    const {sortedCategory,sortCocktails} = useTypedSelector(state => state.pub)
     const main = cn("main");
     const cardList = cn("cardList");
     return (
         <main className={main()}>
             <div className={cardList()}>
-                {sortedCocktails.map(item => (
+                {sortedCategory.filter(item=>item.title.toLowerCase().includes(sortCocktails)).map(item => (
                     <div className={cardList("item")}>
                         <Card cardDataItem={item}/>
                     </div>

@@ -9,7 +9,8 @@ const initialState = {
     isLoading: false,
     error: null,
     selectedCategory: "",
-    sortedCocktails: []
+    sortedCategory: [],
+    sortCocktails: ""
 };
 
 
@@ -19,7 +20,13 @@ export const pubSlice = createSlice({
     reducers: {
         selectCategory(state, action) {
             state.selectedCategory = action.payload;
-            state.sortedCocktails = state.cocktails.filter(item => item.description.includes(state.selectedCategory));
+            state.sortedCategory = state.cocktails.filter(item => item.description.includes(state.selectedCategory));
+        },
+        sortCocktails(state, action) {
+            // if (action.payload) {
+            //     state.sortCocktails = state.sortedCategory.filter(item => item.title.toLowerCase().includes(action.payload.toLowerCase()))
+            // }
+            state.sortCocktails = action.payload.toLowerCase();
         }
     },
     extraReducers: {
@@ -32,7 +39,7 @@ export const pubSlice = createSlice({
             state.categories = [...state.categories, ...action.payload[1].categories];
             state.cocktails = action.payload[2].cocktails;
             state.count = action.payload[0].count;
-            state.sortedCocktails = state.cocktails.filter(item => item.description.includes(state.categories[0]));
+            state.sortedCategory = state.cocktails.filter(item => item.description.includes(state.categories[0]));
         },
         [getAll.rejected]: (state, action) => {
             state.isLoading = false;
@@ -41,6 +48,6 @@ export const pubSlice = createSlice({
     }
 });
 
-export const {selectCategory} = pubSlice.actions;
+export const {selectCategory, sortCocktails} = pubSlice.actions;
 export const pubReducer = pubSlice.reducer;
 
