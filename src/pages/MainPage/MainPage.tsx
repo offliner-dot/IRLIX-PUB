@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from "components/App/Header/Header";
-import Footer from "components/App/Footer/Footer";
-import Main from "components/App/Main/Main";
+import {Header} from "components/Header";
+import {Footer} from "components/Footer";
+import {Main} from "components/Main";
 
-const MainPage = () => {
+export const MainPage = () => {
     return (
         <div className={"container"}>
             <Header/>
@@ -13,4 +13,3 @@ const MainPage = () => {
     );
 };
 
-export default MainPage;

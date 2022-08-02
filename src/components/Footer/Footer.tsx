@@ -2,14 +2,14 @@ import React, {useState} from 'react';
 import "./Footer.css";
 import {cn} from "utils/bem-config";
 import {useDispatch} from "react-redux";
-import {sortCocktails} from "../../../store/pub/pub.slice";
+import {searchCocktails} from "../../store/pub/pub.slice";
 
-const Footer = () => {
+export const Footer = () => {
     const dispatch = useDispatch();
     const [state, setState] = useState<number | string>("");
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setState(e.currentTarget.value);
-        dispatch(sortCocktails(e.currentTarget.value));
+        dispatch(searchCocktails(e.currentTarget.value));
     };
     const footer = cn("footer");
     return (
@@ -25,4 +25,3 @@ const Footer = () => {
     );
 };
 
-export default Footer;

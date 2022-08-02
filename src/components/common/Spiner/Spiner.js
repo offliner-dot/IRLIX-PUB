@@ -1,9 +1,8 @@
 import {cn} from "utils/bem-config";
 import "./Spiner.css";
 
-const Spiner = () => {
+export const Spiner = () => {
     const loader = cn("loader")
     return <div className={loader()}></div>;
 };
 
-export default Spiner;

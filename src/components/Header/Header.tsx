@@ -1,9 +1,9 @@
 import React from 'react';
 import "./Header.css"
-import Logo from "components/generic/Logo/Logo";
+import {Logo} from "components/common/Logo";
 import {cn} from "utils/bem-config";
-import NavBar from "components/generic/NavBar/NavBar";
-import Title from "components/generic/Title/Title";
+import {NavBar} from "components/NavBar";
+import {Title} from "components/common/Title";
 
 
 enum TitleValue {
@@ -11,7 +11,7 @@ enum TitleValue {
     search = "Поиск"
 }
 
-const Header = () => {
+export const Header = () => {
     const header = cn("header");
     return (
         <header className={header()}>
@@ -24,4 +24,3 @@ const Header = () => {
     );
 };
 
-export default Header;

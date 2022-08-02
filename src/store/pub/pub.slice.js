@@ -3,14 +3,13 @@ import {getAll} from "./pub.api";
 
 
 const initialState = {
-    count: null,
     cocktails: [],
     categories: [],
-    isLoading: false,
-    error: null,
-    selectedCategory: "",
     sortedCategory: [],
-    sortCocktails: ""
+    result: [],
+    searchValue: "",
+    error: "",
+    isLoading: false
 };
 
 
@@ -19,24 +18,27 @@ export const pubSlice = createSlice({
     initialState,
     reducers: {
         selectCategory(state, action) {
-            state.selectedCategory = action.payload;
-            state.sortedCategory = state.cocktails.filter(item => item.description.includes(state.selectedCategory));
+            state.sortedCategory = state.cocktails.filter(item => item.description.includes(action.payload));
+            state.result = state.cocktails.filter(item => item.description.includes(action.payload))
+                .filter(item => item.title.toLowerCase().includes(state.searchValue));
         },
-        sortCocktails(state, action) {
-            state.sortCocktails = action.payload.toLowerCase();
+        searchCocktails(state, action) {
+            const searchValue = action.payload.toLowerCase();
+            state.searchValue = searchValue;
+            state.result = state.sortedCategory.filter(item => item.title.toLowerCase().includes(searchValue))
         }
     },
     extraReducers: {
         [getAll.pending]: (state) => {
             state.isLoading = true;
-            state.error = null;
+            state.error = "";
         },
         [getAll.fulfilled]: (state, action) => {
             state.isLoading = false;
-            state.categories = [...state.categories, ...action.payload[1].categories];
+            state.categories = action.payload[1].categories;
             state.cocktails = action.payload[2].cocktails;
-            state.count = action.payload[0].count;
-            state.sortedCategory = state.cocktails.filter(item => item.description.includes(state.categories[0]));
+            state.result = state.cocktails;
+            state.sortedCategory = state.cocktails;
         },
         [getAll.rejected]: (state, action) => {
             state.isLoading = false;
@@ -45,6 +47,6 @@ export const pubSlice = createSlice({
     }
 });
 
-export const {selectCategory, sortCocktails} = pubSlice.actions;
+export const {selectCategory, searchCocktails} = pubSlice.actions;
 export const pubReducer = pubSlice.reducer;
 

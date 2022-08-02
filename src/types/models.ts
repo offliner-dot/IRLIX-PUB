@@ -5,7 +5,7 @@ export type CardData = {
     alcohol: number
 };
 
-export type Cocktal = {
+export type Cocktail = {
     image: string;
     title: string;
     description: string[];
@@ -26,5 +26,5 @@ export type Ingredient = {
 export type Response = {
     count: number
     categories: []
-    cocktails: Cocktal[]
+    cocktails: Cocktail[]
 }
