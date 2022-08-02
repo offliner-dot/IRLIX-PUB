@@ -9,7 +9,7 @@
     align-items: center;
     background: var(--bg-black);
     height: 98px;
-    padding-left: 32px;
+    padding: 0 32px;
     border-top-left-radius: 32px;
     border-top-right-radius: 32px;
 }
