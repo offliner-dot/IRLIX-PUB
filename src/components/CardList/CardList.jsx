@@ -1,12 +1,10 @@
 import React from 'react';
 import {cn} from "../../utils/bem-config";
 import {Card} from "../common/Card";
-import {useTypedSelector} from "../../hooks/useTypedSelector";
 import "./CardList.css";
 import {Link} from "react-router-dom";
 
-export const CardList = () => {
-    const {result, searchValue} = useTypedSelector(state => state.pub);
+export const CardList = ({result, searchValue}) => {
     const cardList = cn("cardList");
 
     return (

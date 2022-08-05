@@ -3,7 +3,7 @@ import "./Main.css";
 import {cn} from "utils/bem-config";
 import {useTypedSelector} from "hooks/useTypedSelector";
 import {Spiner} from "components/common/Spiner";
-import {CardList} from "../CardList";
+import CardListContainer from "../../containers/CardListContainer";
 
 
 export const Main = () => {
@@ -12,7 +12,7 @@ export const Main = () => {
     return (
         <main className={main()}>
             {isLoading && <Spiner/>}
-            <CardList/>
+            <CardListContainer/>
         </main>
     );
 };

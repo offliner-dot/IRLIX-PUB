@@ -1,12 +1,11 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {getAll} from "./pub.api";
+import {pubApi} from "./pub.api";
 
 
 const initialState = {
     cocktails: [],
     categories: [],
-    sortedCategory: [],
-    result: [],
+    selectedCategory: "",
     searchValue: "",
     error: "",
     isLoading: false
@@ -18,29 +17,23 @@ export const pubSlice = createSlice({
     initialState,
     reducers: {
         selectCategory(state, action) {
-            state.sortedCategory = state.cocktails.filter(item => item.description.includes(action.payload));
-            state.result = state.cocktails.filter(item => item.description.includes(action.payload))
-                .filter(item => item.title.toLowerCase().includes(state.searchValue));
+            state.selectedCategory = action.payload;
         },
         searchCocktails(state, action) {
-            const searchValue = action.payload.toLowerCase();
-            state.searchValue = searchValue;
-            state.result = state.sortedCategory.filter(item => item.title.toLowerCase().includes(searchValue))
+            state.searchValue = action.payload.toLowerCase();
         }
     },
     extraReducers: {
-        [getAll.pending]: (state) => {
+        [pubApi.getAllCards.pending]: (state) => {
             state.isLoading = true;
             state.error = "";
         },
-        [getAll.fulfilled]: (state, action) => {
+        [pubApi.getAllCards.fulfilled]: (state, action) => {
             state.isLoading = false;
             state.categories = action.payload[1].categories;
             state.cocktails = action.payload[2].cocktails;
-            state.result = state.cocktails;
-            state.sortedCategory = state.cocktails;
         },
-        [getAll.rejected]: (state, action) => {
+        [pubApi.getAllCards.rejected]: (state, action) => {
             state.isLoading = false;
             state.error = action.error.message;
         }

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Link, useParams} from "react-router-dom";
-import {getOne} from "../../store/pub/pub.api";
+import {pubApi} from "../../store/pub/pub.api";
 import {cn} from "../../utils/bem-config";
 import "./CardPage.css";
 import {useTypedSelector} from "../../hooks/useTypedSelector";
@@ -14,7 +14,7 @@ export const CardPage = () => {
 
 
     useEffect(() => {
-        getOne(id).then(data => setData(data))
+        pubApi.getOneCard(id).then(data => setData(data))
     }, [id])
     console.log(isLoading)
     return (<div className={"container"}>
