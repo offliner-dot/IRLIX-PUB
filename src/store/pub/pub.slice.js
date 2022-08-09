@@ -1,16 +1,14 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {getAll} from "./pub.api";
+import {pubApi} from "./pub.api";
 
 
 const initialState = {
-    count: null,
     cocktails: [],
     categories: [],
-    isLoading: false,
-    error: null,
     selectedCategory: "",
-    sortedCategory: [],
-    sortCocktails: ""
+    searchValue: "",
+    error: "",
+    isLoading: false
 };
 
 
@@ -20,31 +18,28 @@ export const pubSlice = createSlice({
     reducers: {
         selectCategory(state, action) {
             state.selectedCategory = action.payload;
-            state.sortedCategory = state.cocktails.filter(item => item.description.includes(state.selectedCategory));
         },
-        sortCocktails(state, action) {
-            state.sortCocktails = action.payload.toLowerCase();
+        searchCocktails(state, action) {
+            state.searchValue = action.payload.toLowerCase();
         }
     },
     extraReducers: {
-        [getAll.pending]: (state) => {
+        [pubApi.getAllCards.pending]: (state) => {
             state.isLoading = true;
-            state.error = null;
+            state.error = "";
         },
-        [getAll.fulfilled]: (state, action) => {
+        [pubApi.getAllCards.fulfilled]: (state, action) => {
             state.isLoading = false;
-            state.categories = [...state.categories, ...action.payload[1].categories];
+            state.categories = action.payload[1].categories;
             state.cocktails = action.payload[2].cocktails;
-            state.count = action.payload[0].count;
-            state.sortedCategory = state.cocktails.filter(item => item.description.includes(state.categories[0]));
         },
-        [getAll.rejected]: (state, action) => {
+        [pubApi.getAllCards.rejected]: (state, action) => {
             state.isLoading = false;
             state.error = action.error.message;
         }
     }
 });
 
-export const {selectCategory, sortCocktails} = pubSlice.actions;
+export const {selectCategory, searchCocktails} = pubSlice.actions;
 export const pubReducer = pubSlice.reducer;
 

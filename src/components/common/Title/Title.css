@@ -8,3 +8,8 @@
     font-weight: 300;
     color: var(--c-gray-200);
 }
+
+.info__link {
+    text-decoration: none;
+    color: inherit;
+}
