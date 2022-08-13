@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/IRLIX-PUB/static/css/main.0a70a576.css",
-    "main.js": "/IRLIX-PUB/static/js/main.5f8b508c.js",
+    "main.css": "/IRLIX-PUB/static/css/main.682ddc37.css",
+    "main.js": "/IRLIX-PUB/static/js/main.14df163a.js",
     "static/media/header_logo.svg": "/IRLIX-PUB/static/media/header_logo.5bc322701a9371c487404fb8710137bd.svg",
     "index.html": "/IRLIX-PUB/index.html",
-    "main.0a70a576.css.map": "/IRLIX-PUB/static/css/main.0a70a576.css.map",
-    "main.5f8b508c.js.map": "/IRLIX-PUB/static/js/main.5f8b508c.js.map"
+    "main.682ddc37.css.map": "/IRLIX-PUB/static/css/main.682ddc37.css.map",
+    "main.14df163a.js.map": "/IRLIX-PUB/static/js/main.14df163a.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a70a576.css",
-    "static/js/main.5f8b508c.js"
+    "static/css/main.682ddc37.css",
+    "static/js/main.14df163a.js"
   ]
 }
