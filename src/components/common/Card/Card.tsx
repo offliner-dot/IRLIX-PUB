@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import "./Card.css";
+import "./Card.scss";
 import {cn} from "utils/bem-config";
 import {Cocktail} from "types/models";
 

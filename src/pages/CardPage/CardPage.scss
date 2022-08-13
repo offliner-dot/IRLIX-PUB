@@ -1,19 +1,20 @@
-.cardPage__wrapper {
+.cardPage {
+  &__wrapper {
     padding: 32px;
     font-size: 18px;
     color: var(--c-gray-200);
     text-align: left;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
-}
+  }
 
-.cardPage__imageWrapper {
+  &__imageWrapper {
     max-width: 1024px;
     height: 600px;
     position: relative;
-}
+  }
 
-.cardPage__arrow {
+  &__arrow {
     width: 64px;
     height: 64px;
     background: var(--bg-gray-600);
@@ -21,58 +22,59 @@
     top: 32px;
     left: 32px;
     border-radius: 16px;
-}
 
-.cardPage__arrowWrapper {
+    &::before {
+      content: "";
+      width: 17px;
+      height: 17px;
+      border-left: 4px solid var(--bg-gray-200);
+      border-top: 4px solid var(--bg-gray-200);
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      transform: rotate(-45deg) translate(5px, 5px);
+    }
+  }
+
+  &__arrowWrapper {
     position: relative;
-}
+  }
 
-.cardPage__arrow::before {
-    content: "";
-    width: 17px;
-    height: 17px;
-    border-left: 4px solid var(--bg-gray-200);
-    border-top: 4px solid var(--bg-gray-200);
-    position: absolute;
-    margin: auto;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    transform: rotate(-45deg) translate(5px, 5px);
-
-}
-
-.cardPage__image {
+  &__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
+  }
 
-.cardPage__title {
+  &__title {
     color: var(--c-white);
     font-size: 24px;
     font-weight: 700;
-}
+  }
 
-.cardPage__subtitle {
+  &__subtitle {
     font-weight: 700;
     color: var(--c-white);
     margin-top: 32px;
     margin-bottom: 8px;
-}
+  }
 
-.cardPage__ingredients {
+  &__ingredients {
     display: flex;
     justify-content: space-between;
-}
+  }
 
-.cardPage__emptyPlace {
+  &__emptyPlace {
     flex: auto;
     border-bottom: 1px dotted;
-    margin: 0 5px;
+    margin: 0 5px 5px;
+  }
+
+  &__amount {
+    align-self: center;
+  }
 }
 
-.cardPage__amount {
-    align-self: center;
-}

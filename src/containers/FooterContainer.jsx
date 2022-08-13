@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {useDispatch} from "react-redux";
-import {searchCocktails} from "../store/pub/pub.slice";
-import {Footer} from "../components/Footer";
+import {searchCocktails} from "store/pub/pub.slice";
+import {Footer} from "components/Footer";
 
 const FooterContainer = () => {
     const dispatch = useDispatch();

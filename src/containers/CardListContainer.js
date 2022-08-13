@@ -1,17 +1,18 @@
-import React, {useEffect} from 'react';
-import {CardList} from "../components/CardList";
-import {pubApi} from "../store/pub/pub.api";
+import React, {useCallback, useEffect} from 'react';
+import {CardList} from "components/CardList";
+import {pubApi} from "store/pub/pub.api";
 import {useDispatch} from "react-redux";
-import {useTypedSelector} from "../hooks/useTypedSelector";
+import {useTypedSelector} from "hooks/useTypedSelector";
+import withIsLoading from "hoc/withIsLoadind";
 
 const CardListContainer = () => {
     const dispatch = useDispatch()
     const {selectedCategory, searchValue, cocktails} = useTypedSelector(state => state.pub);
     useEffect(() => {
-        dispatch(pubApi.getAllCards())
-    }, [dispatch]);
+        if (cocktails.length === 0) dispatch(pubApi.getAllCards())
+    }, [cocktails.length, dispatch]);
 
-    const getSortedCocktails = () => {
+    const getSortedCocktails = useCallback(() => {
         if (selectedCategory && !searchValue) {
             return cocktails.filter(item => item.description.includes(selectedCategory))
         }
@@ -23,13 +24,12 @@ const CardListContainer = () => {
                 .filter(item => item.title.toLowerCase().includes(searchValue))
         }
         return cocktails
-    }
+    }, [cocktails, searchValue, selectedCategory]);
 
-
-    return <CardList
+    return <WithIsLoadingCardList
         result={getSortedCocktails()}
         searchValue={searchValue}
     />
 };
-
+const WithIsLoadingCardList = withIsLoading(CardList)
 export default CardListContainer;

@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {useTypedSelector} from "../hooks/useTypedSelector";
+import {useTypedSelector} from "hooks/useTypedSelector";
 import {useDispatch} from "react-redux";
-import {selectCategory} from "../store/pub/pub.slice";
-import {NavBar} from "../components/NavBar";
+import {selectCategory} from "store/pub/pub.slice";
+import {NavBar} from "components/NavBar";
 
 const NavBarContainer = () => {
     const categories = useTypedSelector(state => state.pub.categories)

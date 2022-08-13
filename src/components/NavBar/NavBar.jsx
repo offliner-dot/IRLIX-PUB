@@ -1,6 +1,6 @@
 import React from 'react';
 import {cn} from "utils/bem-config";
-import "./NavBar.css";
+import "./NavBar.scss";
 
 
 export const NavBar = ({categories, handleClick, activeCategory}) => {

@@ -1,24 +1,12 @@
-import React, {useEffect, useState} from 'react';
-import {Link, useParams} from "react-router-dom";
-import {pubApi} from "../../store/pub/pub.api";
-import {cn} from "../../utils/bem-config";
-import "./CardPage.css";
-import {useTypedSelector} from "../../hooks/useTypedSelector";
-import {Spiner} from "../../components/common/Spiner";
+import React from 'react';
+import {Link} from "react-router-dom";
+import {cn} from "utils/bem-config";
+import "./CardPage.scss";
 
-export const CardPage = () => {
-    const {isLoading} = useTypedSelector(state => state.pub)
-    const {id} = useParams();
-    const [data, setData] = useState([]);
+export const CardPage = ({data}) => {
     const cardPage = cn("cardPage");
 
-
-    useEffect(() => {
-        pubApi.getOneCard(id).then(data => setData(data))
-    }, [id])
-    console.log(isLoading)
     return (<div className={"container"}>
-        {isLoading && <Spiner/>}
         <div className={cardPage("imageWrapper")}>
             <Link to={"/IRLIX-PUB"}>
                 <div className={cardPage("arrowWrapper")}>

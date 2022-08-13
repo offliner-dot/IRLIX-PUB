@@ -1,10 +1,10 @@
 import React from 'react';
-import "./Footer.css";
+import "./Footer.scss";
 import {cn} from "utils/bem-config";
 
 export const Footer = ({handleChange, fieldValue}) => {
-
     const footer = cn("footer");
+    
     return (
         <footer className={footer()}>
             <input className={footer("searchInput")}

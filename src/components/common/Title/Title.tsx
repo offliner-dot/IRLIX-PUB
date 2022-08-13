@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {cn} from "utils/bem-config";
-import "./Title.css";
+import "./Title.scss";
 import {Link} from "react-router-dom";
 
 type PropsType = {
