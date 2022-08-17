@@ -1,6 +1,6 @@
 import React from 'react';
 import {cn} from "utils/bem-config";
-import {Card} from "common/Card";
+import {Card} from "components/common/Card";
 import "./CardList.scss";
 import {Link} from "react-router-dom";
 
