@@ -56,7 +56,7 @@ export const pubSlice = createSlice({
     }
 });
 
-
+export const selectorPub = state => state.pub;
 export const {selectCategory, searchCocktails} = pubSlice.actions;
 export const pubReducer = pubSlice.reducer;
 

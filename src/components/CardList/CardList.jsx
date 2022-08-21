@@ -6,7 +6,6 @@ import {Link} from "react-router-dom";
 
 export const CardList = ({result, searchValue}) => {
     const cardList = cn("cardList");
-
     return (
         <div className={cardList()}>
             {(searchValue && !result.length) ? "Ничего не найдено" :

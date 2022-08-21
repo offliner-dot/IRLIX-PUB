@@ -4,10 +4,11 @@ import {pubApi} from "store/pub/pub.api";
 import {useDispatch} from "react-redux";
 import {useTypedSelector} from "hooks/useTypedSelector";
 import withIsLoading from "hoc/withIsLoadind";
+import {selectorPub} from "store/pub/pub.slice";
 
 const CardListContainer = () => {
     const dispatch = useDispatch()
-    const {selectedCategory, searchValue, cocktails} = useTypedSelector(state => state.pub);
+    const {selectedCategory, searchValue, cocktails} = useTypedSelector(selectorPub);
     useEffect(() => {
         if (cocktails.length === 0) dispatch(pubApi.getAllCards())
     }, [cocktails.length, dispatch]);
