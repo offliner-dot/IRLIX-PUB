@@ -1,0 +1,17 @@
+.footerButton {
+  padding: 15px 24px;
+  color: var(--c-gray-200);
+  font-weight: 500;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  border-radius: 32px;
+  background: var(--bg-gray-600);
+  border: none;
+  cursor: pointer;
+
+  &:active {
+    color: red;
+    border: 1px solid red;
+    background: var(--bg-black);
+  }
+}

@@ -8,7 +8,7 @@ export const CardList = ({result, searchValue}) => {
     return (
         <div className={cardList()}>
             {(searchValue && !result.length) ? "Ничего не найдено" :
-                result.map(item => (
+                result?.map(item => (
                     <div className={cardList("item")} key={item.id}>
                         <Card cardDataItem={item}/>
                     </div>

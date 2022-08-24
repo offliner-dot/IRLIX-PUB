@@ -13,27 +13,12 @@
   border-top-left-radius: 32px;
   border-top-right-radius: 32px;
 
-  &__searchInput {
-    height: 58px;
-    padding: 15px 24px;
-    background: var(--bg-gray-600);
-    border-radius: 32px;
-    font-weight: 500;
-    font-size: 18px;
-    color: var(--c-gray-200);
-    width: 101px;
-    outline: none;
-    border: none;
-    transition: width .3s linear;
-  }
 
-  &__searchInput::placeholder {
-    color: var(--c-gray-200);
-  }
-
-  &__searchInput:focus {
+  &__wrapper {
     width: 100%;
-    transition: width .3s linear;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 

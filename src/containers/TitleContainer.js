@@ -6,11 +6,17 @@ const TitleContainer = () => {
     const location = useLocation()
     const titleValue = {
         "/IRLIX-PUB": "Главная",
-        "/favorites": "Избранное",
-        "/search": "Поиск"
+        "/IRLIX-PUB/favorites": "Избранное",
+        "/IRLIX-PUB/search": "Поиск"
+    }
+    const getDate = () => {
+        const month = new Date().toLocaleString("ru-RU", {day: 'numeric', month: 'long', year: 'numeric'});
+        return month.split(" ").slice(0, 3).join(" ");
     }
     return <Title
-        TitleValue={titleValue[location.pathname]}/>
+        titleValue={titleValue[location.pathname]}
+        date={getDate()}
+    />
 
 };
 

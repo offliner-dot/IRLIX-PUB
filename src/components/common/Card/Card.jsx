@@ -4,9 +4,9 @@ import {cn} from "utils/bem-config";
 import {Link} from "react-router-dom";
 import BookmarkContainer from "containers/BookmarkContainer";
 
-export const Card = memo((cardDataItem) => {
+export const Card = memo(({cardDataItem}) => {
     const card = cn("card");
-    const {title, alcohol, image, description, id} = cardDataItem.cardDataItem;
+    const {title, alcohol, image, description, id} = cardDataItem;
     return (
         <div className={card()}>
             <BookmarkContainer id={id}/>

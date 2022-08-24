@@ -6,6 +6,10 @@
     text-align: left;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
+    transform: translateY(-32px);
+    border-top-right-radius: 32px;
+    background: var(--bg-blue-800);
+    position: relative;
   }
 
   &__imageWrapper {
