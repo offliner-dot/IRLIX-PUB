@@ -10,7 +10,7 @@ const CardListContainer = () => {
     const dispatch = useDispatch()
     const {selectedCategory, searchValue, cocktails} = useTypedSelector(selectorPub);
     useEffect(() => {
-        if (cocktails.length === 0) dispatch(pubApi.getAllCards())
+        if (cocktails?.length === 0) dispatch(pubApi.getAllCards())
     }, [cocktails.length, dispatch]);
 
     const getSortedCocktails = useCallback(() => {

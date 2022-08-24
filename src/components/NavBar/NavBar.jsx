@@ -7,7 +7,7 @@ export const NavBar = ({categories, handleClick, activeCategory}) => {
     const navBar = cn("navBar");
     return (
         <ul className={navBar()}>
-            {categories.map((name) => (
+            {categories?.map((name) => (
                 <li key={name} className={navBar("item", {active: name === activeCategory})}
                     onClick={(e) => handleClick(e)}
                 >{name}

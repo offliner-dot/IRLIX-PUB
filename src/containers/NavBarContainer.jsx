@@ -1,10 +1,10 @@
-import React, {memo} from 'react';
+import React from 'react';
 import {useTypedSelector} from "hooks/useTypedSelector";
 import {useDispatch} from "react-redux";
 import {selectCategory, selectorPub} from "store/pub/pub.slice";
 import {NavBar} from "components/NavBar";
 
-const NavBarContainer = memo(() => {
+const NavBarContainer = () => {
     const {categories, selectedCategory} = useTypedSelector(selectorPub)
     const dispatch = useDispatch();
 
@@ -17,6 +17,6 @@ const NavBarContainer = memo(() => {
         handleClick={handleClick}
         activeCategory={selectedCategory}
     />
-}, []);
+};
 
 export default NavBarContainer;

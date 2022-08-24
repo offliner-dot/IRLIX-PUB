@@ -1,10 +1,9 @@
-import React from 'react';
+import React, {memo} from 'react';
 import "./Footer.scss";
 import {cn} from "utils/bem-config";
 
-export const Footer = ({handleChange, fieldValue}) => {
+export const Footer = memo(({handleChange, fieldValue}) => {
     const footer = cn("footer");
-    
     return (
         <footer className={footer()}>
             <input className={footer("searchInput")}
@@ -15,5 +14,5 @@ export const Footer = ({handleChange, fieldValue}) => {
             />
         </footer>
     );
-};
+});
 

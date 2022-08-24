@@ -11,6 +11,7 @@ export const App = () => {
             <Routes>
                 <Route path="/IRLIX-PUB" element={<MainPage/>}/>
                 <Route path="/IRLIX-PUB/:id" element={<CardPageContainer/>}/>
+                <Route path="/favorites" element={<ErrorPage/>}/>
                 <Route path="*" element={<ErrorPage/>}/>
             </Routes>
         </>

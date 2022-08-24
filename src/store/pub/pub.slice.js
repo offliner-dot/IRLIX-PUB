@@ -9,7 +9,8 @@ const initialState = {
     selectedCategory: "",
     searchValue: "",
     error: "",
-    isLoading: false
+    isLoading: false,
+    favorites: []
 };
 
 
@@ -22,6 +23,12 @@ export const pubSlice = createSlice({
         },
         searchCocktails(state, action) {
             state.searchValue = action.payload.toLowerCase();
+        },
+        toggleFavorites(state, action) {
+            const value = +action.payload;
+            state.favorites.includes(value) ?
+                state.favorites = state.favorites.filter(item => item !== value) :
+                state.favorites.push(value);
         }
     },
     extraReducers: {
@@ -57,6 +64,6 @@ export const pubSlice = createSlice({
 });
 
 export const selectorPub = state => state.pub;
-export const {selectCategory, searchCocktails} = pubSlice.actions;
+export const {selectCategory, searchCocktails, toggleFavorites} = pubSlice.actions;
 export const pubReducer = pubSlice.reducer;
 

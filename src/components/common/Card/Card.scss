@@ -11,6 +11,13 @@
     object-fit: cover;
   }
 
+  &__bookmark {
+    position: absolute;
+    top: 0;
+    right: 100px;
+    fill: #44414E;
+  }
+
   &__alcohol {
     position: absolute;
     height: 80px;

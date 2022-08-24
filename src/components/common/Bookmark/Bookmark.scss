@@ -1,0 +1,17 @@
+.bookmark {
+  width: 20px;
+  height: 32px;
+  position: absolute;
+  right: 36px;
+  top: -4px;
+
+  &__svg {
+    width: 100%;
+    height: 100%;
+    fill: var(--c-gray-200);
+
+    &--active {
+      fill: red;
+    }
+  }
+}
