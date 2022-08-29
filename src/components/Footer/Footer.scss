@@ -1,0 +1,25 @@
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 -32px;
+  display: flex;
+  align-items: center;
+  background: var(--bg-black);
+  height: 98px;
+  padding: 0 32px;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+

@@ -1,5 +1,5 @@
 import {cn} from "utils/bem-config";
-import "./Spiner.css";
+import "./Spiner.scss";
 
 export const Spiner = () => {
     const loader = cn("loader")

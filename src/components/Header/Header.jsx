@@ -1,9 +1,9 @@
 import React from 'react';
-import "./Header.css"
+import "./Header.scss"
 import {Logo} from "components/common/Logo";
 import {cn} from "utils/bem-config";
-import {Title} from "components/common/Title";
-import NavBarContainer from "../../containers/NavBarContainer";
+import NavBarContainer from "containers/NavBarContainer";
+import TitleContainer from "containers/TitleContainer";
 
 
 export const Header = () => {
@@ -11,7 +11,7 @@ export const Header = () => {
     return (
         <header className={header()}>
             <div className={header("wrapper")}>
-                <Title TitleValue={"Главная"}/>
+                <TitleContainer/>
                 <Logo/>
             </div>
             <NavBarContainer/>

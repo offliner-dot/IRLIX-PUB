@@ -1,19 +1,18 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useDispatch} from "react-redux";
-import {searchCocktails} from "../store/pub/pub.slice";
-import {Footer} from "../components/Footer";
+import {searchCocktails, selectorPub} from "store/pub/pub.slice";
+import {Footer} from "components/Footer";
+import {useTypedSelector} from "hooks/useTypedSelector";
 
 const FooterContainer = () => {
     const dispatch = useDispatch();
-    const [state, setState] = useState("");
-
+    const {searchValue} = useTypedSelector(selectorPub);
     const handleChange = (e) => {
-        setState(e.currentTarget.value);
         dispatch(searchCocktails(e.currentTarget.value));
     };
 
     return <Footer
-        fieldValue={state}
+        fieldValue={searchValue}
         handleChange={handleChange}
     />
 };

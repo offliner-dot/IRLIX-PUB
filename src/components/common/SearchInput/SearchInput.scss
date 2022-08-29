@@ -1,0 +1,24 @@
+.searchInput {
+  height: 58px;
+  padding: 15px 24px;
+  background: var(--bg-gray-600);
+  border-radius: 32px;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--c-gray-200);
+  width: 100%;
+  outline: none;
+  border: none;
+  position: relative;
+
+  &::placeholder {
+    color: var(--c-gray-200);
+  }
+
+  &__close {
+    position: absolute;
+    top: 37px;
+    right: 55px;
+  }
+}
+

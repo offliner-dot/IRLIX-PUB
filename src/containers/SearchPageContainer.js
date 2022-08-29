@@ -1,29 +1,29 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {CardList} from "components/CardList";
-import {pubApi} from "store/pub/pub.api";
-import {useDispatch} from "react-redux";
 import {useTypedSelector} from "hooks/useTypedSelector";
-import withIsLoading from "hoc/withIsLoadind";
 import {selectorPub} from "store/pub/pub.slice";
 
-const CardListContainer = () => {
-    const dispatch = useDispatch()
+const SearchPageContainer = () => {
     const {selectedCategory, searchValue, cocktails} = useTypedSelector(selectorPub);
-    useEffect(() => {
-        if (cocktails?.length === 0) dispatch(pubApi.getAllCards())
-    }, [cocktails.length, dispatch]);
+
 
     const getSortedCocktails = () => {
         if (selectedCategory && !searchValue) {
             return cocktails.filter(item => item.description.includes(selectedCategory))
         }
+        if (!selectedCategory && searchValue) {
+            return cocktails.filter(item => item.title.toLowerCase().includes(searchValue))
+        }
+        if (selectedCategory && searchValue) {
+            return cocktails.filter(item => item.description.includes(selectedCategory))
+                .filter(item => item.title.toLowerCase().includes(searchValue))
+        }
         return cocktails
-    };
+    }
 
-    return <WithIsLoadingCardList
+    return <CardList
         result={getSortedCocktails()}
         searchValue={searchValue}
     />
 };
-const WithIsLoadingCardList = withIsLoading(CardList)
-export default CardListContainer;
+export default SearchPageContainer;
