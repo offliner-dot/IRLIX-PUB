@@ -11,7 +11,7 @@ export const Footer = ({handleChange, fieldValue}) => {
     const location = useLocation();
 
     const contentMapper = {
-        "/IRLIX-PUB": () => (
+        "/IRLIX-PUB/": () => (
             <>
                 <FooterButton btnValue="Избранное" linkValue="/IRLIX-PUB/favorites"/>
                 <SearchIcon/>
@@ -21,7 +21,7 @@ export const Footer = ({handleChange, fieldValue}) => {
         "/IRLIX-PUB/favorites": () =>
             (
                 <>
-                    <FooterButton btnValue="Назад" linkValue="/IRLIX-PUB"/>
+                    <FooterButton btnValue="Назад" linkValue="/IRLIX-PUB/"/>
                     <SearchIcon/>
                 </>
             )

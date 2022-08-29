@@ -10,7 +10,7 @@ export const CardPage = ({data}) => {
     return (
         <div className="container">
             <div className={cardPage("imageWrapper")}>
-                <Link to={"/IRLIX-PUB"}>
+                <Link to={"/IRLIX-PUB/"}>
                     <div className={cardPage("arrowWrapper")}>
                         <div className={cardPage("arrow")}></div>
                     </div>

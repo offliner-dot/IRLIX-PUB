@@ -5,7 +5,7 @@ import {useLocation} from "react-router-dom";
 const TitleContainer = () => {
     const location = useLocation()
     const titleValue = {
-        "/IRLIX-PUB": "Главная",
+        "/IRLIX-PUB/": "Главная",
         "/IRLIX-PUB/favorites": "Избранное",
         "/IRLIX-PUB/search": "Поиск"
     }

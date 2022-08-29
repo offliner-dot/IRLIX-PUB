@@ -10,14 +10,16 @@ export const Card = memo(({cardDataItem}) => {
     return (
         <div className={card()}>
             <BookmarkContainer id={id}/>
-            <Link to={`/IRLIX-PUB/${id}`}>
                 <img className={card("background")} src={image} alt="коктейль"/>
-                <div className={card("info")}>
-                    <h2 className={card("title")}>{title}</h2>
-                    <p className={card("description")}>{description.slice(1).map(item => `${item} `)}</p>
-                </div>
-                <p className={card("alcohol")}>{alcohol}%<span className={card("size")}>Алкоголь</span></p>
-            </Link>
+            <div className={card("info")}>
+                <h2 className={card("title")}>
+                    <Link className={card("link")} to={`/IRLIX-PUB/${id}`}>
+                        {title}
+                    </Link>
+                </h2>
+                <p className={card("description")}>{description.slice(1).map(item => `${item} `)}</p>
+            </div>
+            <p className={card("alcohol")}>{alcohol}%<span className={card("size")}>Алкоголь</span></p>
         </div>
     );
 });

@@ -14,7 +14,7 @@ export const SearchInput = ({fieldValue, handleChange}) => {
                    value={fieldValue}
                    onChange={(e) => handleChange(e)}
             />
-            <Link className={searchInput("close")} to="/IRLIX-PUB">
+            <Link className={searchInput("close")} to="/IRLIX-PUB/">
                 <img src={close} alt="Выход"/>
             </Link>
         </>

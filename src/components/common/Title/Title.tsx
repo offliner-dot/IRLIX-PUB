@@ -13,7 +13,7 @@ export const Title: FC<PropsType> = ({titleValue, date}) => {
     return (
         <div className={info("info")}>
             <h1 className={info("title")}>
-                <Link className={info("link")} to={"/IRLIX-PUB"}>
+                <Link className={info("link")} to={"/IRLIX-PUB/"}>
                     {titleValue}
                 </Link>
             </h1>
